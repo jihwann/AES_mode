@@ -31,7 +31,7 @@ class AES
 		u8 w[11][4][4];
 
 		void KeyExpansion(u8* key, u8 w[][4][4]);
-		unsigned char FFmul(u8 a, u8 b);
+		u8 FFmul(u8 a, u8 b);
 
 		void SubBytes(u8 state[][4]);
 		void ShiftRows(u8 state[][4]);
@@ -46,8 +46,8 @@ class AES
 		AES(u8* key = NULL);
 		virtual ~AES();
 		void SetKey(u8 *key);
-		unsigned char* Cipher(u8* input, u8* output);
-		unsigned char* InvCipher(u8* input, u8* output);
+		u8* Cipher(u8* input, u8* output);
+		u8* InvCipher(u8* input, u8* output);
 		void* Cipher(void* input, void *output, int length = 0);
 		void* InvCipher(void* input, void *output, int length);
 };
